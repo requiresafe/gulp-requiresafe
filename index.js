@@ -3,6 +3,7 @@
 var GulpUtil = require('gulp-util');
 var Chalk = require('chalk');
 var Table = require('cli-table');
+var Fs = require('fs');
 var RequireSafe = require('requiresafe');
 
 var rsGulp = function (params, callback) {
@@ -10,11 +11,30 @@ var rsGulp = function (params, callback) {
   var payload = {};
 
   if (params.package) {
-    payload.package = params.package;
+
+    if (typeof params.package === 'string') {
+      // try and load it
+      try {
+        payload.package = JSON.parse(Fs.readFileSync(params.package));
+      } catch (err) {
+        return callback(Chalk.yellow('(+) ') + err);
+      }
+    } else {
+      payload.package = params.package;
+    }
   }
 
   if (params.shrinkwrap) {
-    payload.shrinkwrap = params.shrinkwrap;
+    if (typeof params.shrinkwrap === 'string') {
+      // try and load it
+      try {
+        payload.shrinkwrap = JSON.parse(Fs.readFileSync(params.shrinkwrap));
+      } catch (err) {
+        return callback(Chalk.yellow('(+) ') + err);
+      }
+    } else {
+      payload.shrinkwrap = params.shrinkwrap;
+    }
   }
 
   RequireSafe.check(payload, function (err, data) {
