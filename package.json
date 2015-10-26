@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
     "shrinkwrap": "npm shrinkwrap && shrinkydink"
   },
   "repository": {
@@ -31,9 +32,15 @@
   },
   "devDependencies": {
     "code": "^1.5.0",
+    "eslint": "^1.7.3",
+    "eslint-config-requiresafe": "^1.0.0",
+    "git-validate": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.6",
     "lab": "^6.2.0",
     "shrinkydink": "^1.0.0"
-  }
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
