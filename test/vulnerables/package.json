@@ -1,0 +1,15 @@
+{
+  "name": "nspTesting",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "nsp-audit-package": "^0.1.0",
+    "nsp-audit-shrinkwrap": "^1.0.3",
+    "sequelize": "1.7.0",
+    "text-table": "^0.2.0"
+  }
+}

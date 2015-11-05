@@ -1,0 +1,22 @@
+{
+  "name": "NotVulnerablePackage",
+  "version": "1.0.0",
+  "description": "Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "nsp",
+    "security",
+    "plugin",
+    "gulpplugin"
+  ],
+  "author": "Joey Cozza",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "text-table": "^0.2.0"
+  }
+}
