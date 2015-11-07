@@ -3,6 +3,8 @@
 var GulpUtil = require('gulp-util');
 var Nsp = require('nsp');
 
+var PLUGIN_NAME = require('./package.json').name;
+
 var rsGulp = function (params, callback) {
 
   var payload = {};
@@ -28,20 +30,14 @@ var rsGulp = function (params, callback) {
 
     var output = formatter(err, data);
 
-    if (err) {
-      return callback(output);
+    if (err || data.length > 0) {
+      return callback(new GulpUtil.PluginError(PLUGIN_NAME, output));
     }
 
     if (params.stopOnError === false || data.length === 0) {
       GulpUtil.log(output);
       return callback();
     }
-
-
-    if (data.length > 0) {
-      return callback(output);
-    }
-
   });
 
 };
