@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "shrinkwrap": "npm shrinkwrap && shrinkydink",
+    "postshrinkwrap": "../node_modules/.bin/shrinkydink",
     "test": "gulp nsp"
   },
   "repository": {
