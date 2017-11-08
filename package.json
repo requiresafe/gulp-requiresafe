@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/nodesecurity/gulp-nsp#readme",
   "dependencies": {
-    "gulp-util": "^3.0.6",
-    "nsp": "^2.0.0"
+    "gulp-util": "^3.0.8",
+    "nsp": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^2.5.3",
